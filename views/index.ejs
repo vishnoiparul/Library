@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Chronicle Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!-- titles -->
+    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-default">
+    <div id="home">
+        <!-- header -->
+        <!-- navbar -->
+        <%- include('partials/nav')  %>
+        <!-- navbar ends -->
+        <div class="banner-bg-agileits">
+            <!-- banner-text -->
+            <div class="banner-text">
+                <div class="container">
+                    <p class="b-txt">the</p>
+                    <h2 class="title">
+                        Library
+                    </h2>
+                    <ul class="banner-txt">
+                        <li>share.</li>
+                        <li> explore. </li>
+                        <li>amplify.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        <!-- about -->
+        <% if(message != null){ %>
+        <div class="alert alert-info alert-dismissible fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Info!</strong> <%= message %>
+        </div>
+        <% } %>
+        <div class="about-sec section" id="about">
+            <div class="container">
+                <!-- about-left-grid -->
+                <div class="col-md-7 about-left-grid" id="about">
+                    <div class="inner-about2">
+                        <h4>the splendid Online Library</h4>
+                        <p>Shop our carefully curated collection of fun and eclectic gifts and goods, and give back to your community.</p>
+                        <h5>the library catalogue</h5>
+                        <ul class="about-list">
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>International Collections</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Hindi books</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Scientific and Technical Information</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Comic Books</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
+
+                        </ul>
+                        <a href="shop">view more</a>
+                    </div>
+                    <!-- about left bottom - services -->
+                    <div class="principles-grids principles-grids1">
+                        <div class="abt-btm agileits w3layouts aos-init aos-animate">
+                            <div class="col-md-6 col-sm-6 agileits elite-services1 w3layouts bottom-gds" data-aos="fade-up">
+                                <div class="bott-img agileits w3layouts">
+                                    <div class="icon-holder agileits w3layouts">
+                                        <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
+                                    </div>
+                                    <h4 class="mission agileits w3layouts">international library</h4>
+                                    <div class="description agileits w3layouts">
+                                        <a href="international">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 agileits elite-services2 w3layouts bottom-gds" data-aos="fade-down">
+                                <div class="bott-img bott-img1 agileits w3layouts">
+                                    <div class="icon-holder agileits w3layouts">
+                                        <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
+                                    </div>
+                                    <h4 class="mission agileits w3layouts">indian materials</h4>
+                                    <div class="description agileits w3layouts">
+                                        <a href="indian">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- //about left bottom - services ends here -->
+                </div>
+                <!-- //about-left-grid ends here-->
+                <!-- about-right-grid -->
+                <div class="col-md-5 about-right-grid"></div>
+                <!-- //about-right-grid ends here -->
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- //about ends here -->
+        <!-- about bottom -->
+        <div class="about-bottom section">
+            <div class="container-fluid">
+                <h4 class="rad-txt">
+                    <span class="abtxt1">wonderful</span>
+                    <span class="abtext"> world of reading</span>
+                </h4>
+                <!-- about-bottom grid1 -->
+                <%- include('partials/catalog') %>
+                <!-- //about-bottom grid1 ends here -->
+                <div class="col-md-6 home-about2">
+                <!-- about-bottom grid2 -->
+                <div class="col-md-6 col-sm-6 col-xs-6 bg-right"></div>
+                <!-- //about-bottom grid2 ends here -->
+                <!-- about-bottom grid3 -->
+                <%- include('partials/statis') %>
+                <!-- //about-bottom grid3 ends here -->
+                <!-- //Numscroller -->
+                <div class="clearfix"></div>
+            </div>
+            <!-- //about container ends here-->
+        </div>
+        <!--//about bottom ends here-->
+        <!-- team -->
+        <div id="team" class="team section">
+            <div class="team-container">
+                <div class="team-row">
+                <% if(mostLiked != null) { %>
+                    <!-- team grid1 -->
+                    <div class="col-md-5 team-grid-left">
+                        <!-- team individual grid -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                            <div class="team-effect">
+                                <img src="uploads/images/<%= mostLiked[0].image %>" alt="img" class="img-responsive" style="max-height: 360px;max-width: 350px">
+                                <div class="social-icon">
+                                    <a href="#" class="social-button twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-button facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="#" class="social-button google">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="team-text">
+                                <h4><%= mostLiked[1].bname %></h4>
+                                <span><%= mostLiked[1].aname %></span>
+                                <p><%= mostLiked[1].description %></p>
+
+                            </div>
+                        </div>
+                        <!-- //team individual grid -->
+                        <!-- team individual grid -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                            <div class="team-text">
+                                <h4><%= mostLiked[0].bname %></h4>
+                                <span><%= mostLiked[0].aname %></span>
+                                <p><%= mostLiked[0].description %></p>
+                            </div>
+                            <div class="team-effect">
+                                <img src="uploads/images/<%= mostLiked[1].image %>" alt="img" class="img-responsive" style="max-height: 360px;max-width: 350px">
+                                <div class="social-icon">
+                                    <a href="#" class="social-button twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-button facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="#" class="social-button google">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- //team individual grid -->
+                        </div>
+                    </div>
+                    <!-- //team-grid1 ends here-->
+                    <!--team-grid2 -->
+                    <div class="col-md-2 col-sm-2 team-mid-txt text-center">
+                        <span>most</span>
+                        <h5>l</h5>
+                        <h5>i</h5>
+                        <h5>k</h5>
+                        <h5>e</h5>
+                        <h5>d</h5>
+                    </div>
+                    <!--//team-grid2 ends here-->
+                    <!-- team grid3 -->
+                    <!-- team individual grid -->
+                    <div class="col-md-5 team-grid-right">
+                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                            <div class="team-text">
+                                <h4><%= mostLiked[3].bname %></h4>
+                                <span><%= mostLiked[3].aname %></span>
+                                <p><%= mostLiked[3].description %></p>
+                            </div>
+                            <div class="team-effect">
+                                <img src="uploads/images/<%= mostLiked[2].image %>" alt="img" class="img-responsive" style="max-height: 360px;max-width: 350px">
+                                <div class="social-icon">
+                                    <a href="#" class="social-button twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-button facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="#" class="social-button google">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //team individual grid -->
+                        <!-- team individual grid -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                            <div class="team-effect">
+                                <img src="uploads/images/<%= mostLiked[3].image %>" alt="img" class="img-responsive" style="max-height: 360px;max-width: 350px">
+                                <div class="social-icon">
+                                    <a href="#" class="social-button twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-button facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="#" class="social-button google">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="team-text">
+                                <h4><%= mostLiked[2].bname %></h4>
+                                <span><%= mostLiked[2].aname %></span>
+                                <p><%= mostLiked[2].description %></p>
+                            </div>
+                        </div>
+                        <!-- //team individual grid -->
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!-- //team grid3 -->
+                    <div class="clearfix"> </div>
+                </div>
+                <!-- //team-row ends here -->
+                <% } %>
+            </div>
+            <!-- // team container ends here -->
+        </div>
+        <!-- //team -->
+        <!--testimonials -->
+        <div class="reviews section" id="testimonials">
+            <div class="container">
+                <h4 class="rad-txt">
+                    <span class="abtxt1">visitors</span>
+                    <span class="abtext">testimonials</span>
+                </h4>
+                <div id="Carousel" class="slide carousel">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-md-6  testi-main">
+                                    <div class="testi-grids">
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[0].title %></h6>
+                                            <p><%= feeds[0].feedback %></p>
+                                            <h5><%= feeds[0].name %></h5>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c3.jpg" alt="">
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  testi-main">
+                                    <div class="testi-grids t2">
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c2.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[1].title %></h6>
+                                            <p><%= feeds[1].feedback %></p>
+                                            <h5><%= feeds[1].name %></h5>
+                                        </div>
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6  testi-main">
+                                    <div class="testi-grids">
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[2].title %></h6>
+                                            <p><%= feeds[2].feedback %></p>
+                                            <h5><%= feeds[2].name %></h5>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c4.jpg" alt="">
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  testi-main">
+                                    <div class="testi-grids t2">
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c1.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[3].title %></h6>
+                                            <p><%= feeds[3].feedback %></p>
+                                            <h5><%= feeds[3].name %></h5>
+                                        </div>
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6  testi-main">
+                                    <div class="testi-grids">
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[4].title %></h6>
+                                            <p><%= feeds[4].feedback %></p>
+                                            <h5><%= feeds[4].name %></h5>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c3.jpg" alt="">
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 testi-main">
+                                    <div class="testi-grids t2">
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c2.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[5].title %></h6>
+                                            <p><%= feeds[5].feedback %></p>
+                                            <h5><%= feeds[5].name %></h5>
+                                        </div>
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  testi-main">
+                                    <div class="testi-grids">
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[6].title %></h6>
+                                            <p><%= feeds[6].feedback %></p>
+                                            <h5><%= feeds[6].name %></h5>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c4.jpg" alt="">
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  testi-main">
+                                    <div class="testi-grids t2">
+                                        <div class="col-md-3 col-sm-3 col-xs-3 img-testi">
+                                            <img class="img-responsive" src="images/c1.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9 team-w3ls-txt">
+                                            <h6><%= feeds[0].title %></h6>
+                                            <p><%= feeds[0].feedback %></p>
+                                            <h5><%= feeds[0].name %></h5>
+                                        </div>
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                    </div>
+                    <!--.carousel-inner-->
+                    <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                    <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div>
+                <!--.Carousel-->
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //testimonials-->
+        <!-- footer-layouts -->
+        <div class="addon-sec section">
+            <div class="container">
+                <h4 class="rad-txt">
+                    <span class="abtxt1">Most</span>
+                    <span class="abtext">Viewed</span>
+                </h4>
+                <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
+                    <a href="#">
+                        <img src="uploads/images/<%= mostViewed[0].image %>" class="img-responsive" alt="chronicle-image" style="max-height: 200px;max-width: 180px">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
+                    <a href="#">
+                        <img src="uploads/images/<%= mostViewed[1].image %>" class="img-responsive" alt="chronicle-image" style="max-height: 200px;max-width: 180px">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
+                    <a href="#">
+                        <img src="uploads/images/<%= mostViewed[2].image %>" class="img-responsive" alt="chronicle-image" style="max-height: 200px;max-width: 180px">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 fimg1">
+                    <a href="#">
+                        <img src="uploads/images/<%= mostViewed[3].image %>" class="img-responsive" alt="chronicle-image" style="max-height: 200px;max-width: 180px">
+                    </a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //footer-layouts -->
+        <!-- footer -->
+        <%- include('partials/footer') %>
+    <!-- //home -->
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!--search jQuery-->
+    <script src="js/main.js"></script>
+    <!--search jQuery-->
+    <!-- cart-js -->
+    <script src="js/minicart.js"></script>
+    <script>
+        chr.render();
+
+        chr.cart.on('new_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) {}
+            }
+        });
+    </script>
+
+    <script>
+        $('#search_bar').keypress(function(event){
+    
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+                $('#search_fm').submit()  
+            }
+
+        })
+    </script>
+    <!-- //cart-js -->
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/scrolling-nav.js"></script>
+    <!-- //fixed-scroll-nav-js -->
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+    <!-- start-smooth-scrolling -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- about bottom grid Numscroller -->
+    <script src="js/numscroller-1.0.js"></script>
+    <!-- //about bottom grid Numscroller -->
+    <!-- Bootstrap core JavaScript
+ ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

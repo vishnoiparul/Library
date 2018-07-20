@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Chronicle Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!-- titles -->
+    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.8/css/fileinput.css">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<%- include('partials/nav') %>
+<hr>
+<hr>
+    <div class="login-form section text-center">
+            <div class="container">
+                <h4 class="rad-txt">
+                    <% if(form == 1) { %>
+                    <a><span class="abtxt1" style="background: #f7c052">Add Book</span></a>
+                    <a>
+                        <span class="abtext" style="border-top-right-radius: 0px;border-bottom-right-radius: 0px">Upload Book Images</span>
+                    </a>
+                    <a><span class="abtext">Upload Pdf file</span></a>
+                    <% }else if(form == 2) { %>
+                    <a><span class="abtxt1" style="background: #f7c052">Add Book</span></a>
+                    <a>
+                        <span class="abtext" style="border-top-right-radius: 0px;border-bottom-right-radius: 0px;background: #e85342">Upload Book Images</span>
+                    </a>
+                    <a>
+                        <span class="abtext" style="background: #f7c052">Upload Pdf file</span>
+                    </a>
+                    <% }else if(form == 3) { %>
+                    <a><span class="abtxt1" style="background: #f7c052">Add Book</span></a>
+                    <a>
+                        <span class="abtext" style="border-top-right-radius: 0px;border-bottom-right-radius: 0px;background: #f7c052">Upload Book Images</span>
+                    </a>
+                    <a>
+                        <span class="abtext" style="background: #e85342">Upload Pdf file</span>
+                    </a>
+                    <% } %>
+                </h4>
+                
+                <% if(form == 1) { %>
+                <!-- Adding Book Form -->
+                <div id="addbookbox" style="margin-top:50px" class="mainbox addbookbox">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Add Book</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px">
+                                <!-- <a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#addbookbox').show()">Sign In</a> -->
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form id="addbookform" class="form-horizontal" action="addbook" method="post">
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Book Name</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="text" class="form-control" name="bname" placeholder="Name of Book" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Author</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="text" class="form-control" name="aname" placeholder="Author Name" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <fieldset align="left">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-3 col-xs-3">
+                                            <legend><p>Choose category</p></legend>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Action & Adventure">
+                                            <label for="Action & Adventure">&nbsp;Action and Adventure</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Art">
+                                            <label for="coding">&nbsp;Art</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Biography">
+                                            <label for="coding">&nbsp;Biographies</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Children">
+                                            <label for="coding">&nbsp;Children</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Comics">
+                                            <label for="coding">&nbsp;Comics</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Drama">
+                                            <label for="coding">&nbsp;Drama</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Enclycopedia">
+                                            <label for="coding">&nbsp;Enclycopedia</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Fantasy">
+                                            <label for="coding">&nbsp;Fantasy</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Health">
+                                            <label for="coding">&nbsp;Health</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="History">
+                                            <label for="coding">&nbsp;History</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Horror">
+                                            <label for="coding">&nbsp;Horror</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Mystery">
+                                            <label for="coding">&nbsp;Mystery</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Romance">
+                                            <label for="coding">&nbsp;Romance</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Science Fiction">
+                                            <label for="coding">&nbsp;Science Fiction</label>
+                                        </div>
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="checkbox" id="category" name="category" value="Travel">
+                                            <label for="coding">&nbsp;Travel</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Language</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <select class="form-control" name="language">
+                                            <option value="English">English</option>
+                                            <option value="Hindi">Hindi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Nationality</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <select class="form-control" name="nationality">
+                                            <option value="International">International</option>
+                                            <option value="Indian">Indian</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Buying Option</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <select class="form-control" name="option" id="buying">
+                                            <option value="paid">Paid</option>
+                                            <option value="free">Free</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Actual Price</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="number" class="form-control" name="aprice" placeholder="Price for Sale" id="actual">
+                                    </div>
+                                </div>
+                                <div id="addbookalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span id="diserror"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Discount Offer</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="number" class="form-control" name="discount" placeholder="Price for Sale" id="discount">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Add Description</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <textarea type="text" class="form-control" rows="5" name="description" placeholder="Description" required=""></textarea>
+                                    </div>
+                                </div>
+                                <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                    <!-- Button -->
+                                    <div class="signup-btn">
+                                        <button id="btn-signup" type="submit" class="btn btn-info">
+                                            <i class="icon-hand-right"></i> &nbsp; Add Book Details</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% } else if(form == 2) {%>
+                <div id="imagebox" style="margin-top:50px" class="mainbox addbookbox">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Add Images</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form id="addimageform" class="form-horizontal" action="addimage" enctype="multipart/form-data" method="post">
+                                <!-- Image Uploading form field -->
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Images</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        
+                                    <div class="file-loading">
+                                        <input id="input-fa" name="input-fa" type="file">
+                                    </div>
+
+
+                                    </div>
+                                </div>
+                                <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                    <!-- Button -->
+                                    <div class="signup-btn">
+                                        <button type="submit" class="btn btn-info">
+                                            <i class="icon-hand-right"></i> &nbsp; Add Image</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% } else if(form == 3) {%>
+                <div id="filebox" style="margin-top:50px" class="mainbox addbookbox">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Add File</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form id="addfileform" class="form-horizontal" action="addfile" enctype="multipart/form-data" method="post">
+                                <!-- File Uploading form field -->
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">File</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <div class="file-loading">
+                                            <input id="input-fa" name="pdf" type="file">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                    <!-- Button -->
+                                    <div class="signup-btn">
+                                        <button type="submit" class="btn btn-info">
+                                            <i class="icon-hand-right"></i> &nbsp; Add PDF</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+
+        <!-- //footer-layouts -->
+        <!-- footer -->
+        <%- include('partials/footer') %>
+
+    <!-- //home -->
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!--search jQuery-->
+    <script src="js/main.js"></script>
+    <!--search jQuery-->
+    <!-- cart-js -->
+    <script src="js/minicart.js"></script>
+    <script>
+        chr.render();
+
+        chr.cart.on('new_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) {}
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <!-- Scrolling Nav JavaScript -->
+    <!-- File uploading js -->
+    <script src="js/scrolling-nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.8/js/fileinput.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.8/themes/fa/theme.js"></script>
+    <script>
+        $("#input-fa").fileinput({
+            theme: "fa",
+            uploadUrl : '/addimage/4'
+        });
+    </script>
+    <!-- //fixed-scroll-nav-js -->
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $('#buying').change(() => {
+                var z = $('#buying').val()
+                // alert(z)
+                if(z == 'paid'){
+                    $('#actual').prop('disabled',false)
+                    $('#discount').prop('disabled',false)
+                } else {
+                    $('#actual').prop('disabled',true)
+                    $('#discount').prop('disabled',true)
+                }
+            })
+        })
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#discount').on('input',() => {
+                var z = $('#discount').val()
+                // alert(z)
+                if((z >= 0)&&(z<100)){
+                    $('#addbookalert').css('display','none')
+                    $('#btn-signup').prop('disabled',false)
+                }else{
+                    // alert('working')
+                    $('#addbookalert').css('display','block')
+                    $('#diserror').text('Discount value should be in between 0 to 100')
+                    $('#btn-signup').prop('disabled',true)
+                }
+            })
+        })
+    </script>
+    <!-- //dropdown nav -->
+    <!-- start-smooth-scrolling -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- about bottom grid Numscroller -->
+    <script src="js/numscroller-1.0.js"></script>
+    <!-- //about bottom grid Numscroller -->
+    <!-- Bootstrap core JavaScript
+ ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

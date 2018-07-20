@@ -1,0 +1,484 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Library | My Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Chronicle Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+    <!-- checkout css -->
+    <link href="css/checkout.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!-- titles -->
+    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+    <style>
+        .side-nav{
+            padding-top: 4%;
+            padding-bottom: 4%; 
+        }
+        .side-nav:hover{
+            background-color: #BBBBBB;
+            padding-top: 4%;
+            padding-bottom: 4%; 
+        }
+        .content{
+            padding: 20px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .file {
+          visibility: hidden;
+          position: absolute;
+        }
+    </style>
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="home">
+        <!-- header -->
+        <!-- navbar -->
+        <%- include('partials/nav') %>
+        <!-- //navbar ends here -->
+        <!-- banner -->
+        <div class="banner-bg-inner">
+            <!-- banner-text -->
+            <div class="banner-text-inner">
+                <div class="container">
+                    <h2 class="title-inner">
+                        world of reading
+                    </h2>
+
+                </div>
+            </div>
+            <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        <!-- breadcrumbs -->
+        <!--//breadcrumbs ends here-->
+        <!--checkout-->
+        <div class="innerf-pages section">
+            <div class="container">
+                <div class="privacy about">
+                    <h4 class="rad-txt">
+                        <span class="abtxt1"><%= user.name %></span>
+                        <span class="abtext">Details</span>
+                    </h4>
+
+                    <div class="checkout-right">
+                        <div class="container" style="border:1px solid #BBBBBB;width: 100%;padding: 0px">
+                            <div class="col-sm-2" style="height: inherit;padding: 0px;">
+                                <% if(user.profile != null) { %>
+                                <img src="uploads/profile/<%= user.profile %>" style="max-height: 200px;max-width: 100%;" alt="loading img">
+                                <% } else { %>
+                                <img src="uploads/profile/default.png" style="max-height: 200px;max-width: 100%;" alt="loading img">
+                                <% } %>
+                                <center><h4 style="margin-top: 5px"><%= user.name %></h4></center>
+                                <ul class="" style="list-style: none;" >
+                                    <li class="side-nav">
+                                        <a id="opt1"><h5 style="margin-left: 8%">Profile</h5></a>
+                                    </li>
+                                    <li class="side-nav">
+                                        <a id="opt2"><h5 style="margin-left: 8%">Photo</h5></a>
+                                    </li>
+                                    <li class="side-nav">
+                                        <a id="opt3"><h5 style="margin-left: 8%">Account</h5></a>
+                                    </li>
+                                    <li class="side-nav">
+                                        <a id="opt4"><h5 style="margin-left: 8%">Card Detail</h5></a>
+                                    </li>
+                                    <li class="side-nav">
+                                        <a id="opt5"><h5 style="margin-left: 8%">Privacy</h5></a>
+                                    </li>
+                                    <li class="side-nav">
+                                        <a id="opt6"><h5 style="margin-left: 8%">Notification</h5></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-10" id="profile" style="display: block;padding: 0px;border-left:1px solid #BBBBBB;min-height: 500px">
+                                <div class="head" align="center" style="border-bottom: 1px solid #BBBBBB;height: 80px;padding:1.5%;">
+                                   <h3 style="font-weight: 600">Profile</h3>
+                                   <p style="font-size: 17px">Add information about yourself to share on your profile.</p>
+                                </div>
+                                <form action="edit_profile" method="post">
+                                <div class="content" style="height: auto;">
+                                        <p style="font-size: 17px">Basics :</p>
+                                        <input type="text" class="form-control" name="uname" value="<%= user.name %>" disabled >
+                                        <br>
+                                        <input type="text" class="form-control" name="contact" value="<%= user.contact %>">
+                                        <br>
+                                        <input type="text" class="form-control" name="email" value="<%= user.email %>" disabled >
+                                        <br>
+                                </div>
+                                <div class="content" align="center" style="height: 90px;border-top: 1px solid #BBBBBB">
+                                    <button class="btn btn-danger btn-lg" type="submit">Save</button>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-10" id="photo" style="display: none;padding: 0px;border-left:1px solid #BBBBBB;min-height: 500px">
+                                <div class="head" align="center" style="border-bottom: 1px solid #BBBBBB;height: 80px;padding:1.5%;">
+                                   <h3 style="font-weight: 600">Photo</h3>
+                                   <p style="font-size: 17px">Add a nice photo of yourself for your profile.</p>
+                                </div>
+                                <form action="edit_photo" method="post" enctype="multipart/form-data">
+                                <div class="content" style="height: auto">
+                                        <p style="font-size: 17px">Image Preview :</p>
+                                        <br>
+                                        <div id="preview" style="height: 250px;width: 100%;border:1px solid #BBBBBB">
+                                            <% if(user.profile == null){ %>
+                                            <img src="uploads/profile/default.png" style="max-height: 250px">
+                                            <% } else { %>
+                                            <img src="uploads/profile/<%= user.profile %>" style="max-height: 250px">
+                                            <% } %>
+                                        </div>
+                                        <br>
+
+
+                                        <p style="font-size: 17px">Add / Change Image :</p>
+                                        <br>
+
+                                        <div class="form-group">
+                                            <input type="file" name="input-fa" class="file">
+                                            <div class="input-group col-xs-12">
+                                              <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                              <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                              <span class="input-group-btn">
+                                                <button class="browse btn btn-default btn-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                                              </span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                </div>
+                                <div class="content" align="center" style="height: 90px;border-top: 1px solid #BBBBBB">
+                                    <button class="btn btn-danger btn-lg" type="submit">Save</button>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-10" id="accDetail" style="display:none;padding: 0px;border-left:1px solid #BBBBBB;min-height: 500px">
+                                <div class="head" align="center" style="border-bottom: 1px solid #BBBBBB;height: 80px;padding:1.5%;">
+                                   <h3 style="font-weight: 600">Account</h3>
+                                   <p style="font-size: 17px">Edit your account settings and change your password here.</p>
+                                </div>
+                                <form action="edit_acc" method="post">
+                                <div class="content" style="height: auto">
+                                        <p style="font-size: 17px">Email :</p>
+                                        <br>
+                                        <input type="text" class="form-control" name="email" value="Your email address is <%= user.email %>" disabled style="font-size: 17px">
+                                        <br>
+                                </div>
+                                <div class="content" style="height: auto;border-top: 1px solid #BBBBBB">
+                                        <p style="font-size: 17px">Password :</p>
+                                        <br>
+                                        <input type="password" class="form-control" name="cpassword" placeholder="Enter Current Password" style="font-size: 17px">
+                                        <br>
+                                        <input type="password" class="form-control" name="npassword" placeholder="Enter New Password" style="font-size: 17px">
+                                        <br>
+                                        <input type="password" class="form-control" name="rpassword" placeholder="Re-type Password" style="font-size: 17px">
+                                        <br>
+                                </div>
+                                <div class="content" align="center" style="height: 90px;border-top: 1px solid #BBBBBB">
+                                    <button class="btn btn-danger btn-lg" type="submit">Change Password</button>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-10" id="cardDetail" style="display:none;padding: 0px;border-left:1px solid #BBBBBB;min-height: 500px">
+                                <div class="head" align="center" style="border-bottom: 1px solid #BBBBBB;height: 80px;padding:1.5%;">
+                                   <h3 style="font-weight: 600">Card Details</h3>
+                                   <p style="font-size: 17px">Update your card information</p>
+                                </div>
+                                <form action="edit_card">
+                                <div class="content" style="height: auto">
+                                        <p style="font-size: 17px">Payment Setting :</p>
+                                        <br>
+                                        <div style="border:1px solid #BBBBBB;padding: 15px">
+                                            <input type="checkbox" name="detail" checked="true"><span style="font-size: 17px">&nbsp;&nbsp;Use my transaction information for further purpose.</span>
+                                        </div>
+                                        <br>
+                                </div>
+                                <div class="content" align="center" style="height: 90px;border-top: 1px solid #BBBBBB">
+                                    <button class="btn btn-danger btn-lg" type="submit">Save</button>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-10" id="privacy" style="display:none;padding: 0px;border-left:1px solid #BBBBBB;min-height: 500px">
+                                <div class="head" align="center" style="border-bottom: 1px solid #BBBBBB;height: 80px;padding:1.5%;">
+                                   <h3 style="font-weight: 600">Privacy</h3>
+                                   <p style="font-size: 17px">Modify your privacy settings here.</p>
+                                </div>
+                                <form action="edit_photo">
+                                <div class="content" style="height: auto">
+                                        <p style="font-size: 17px">Profile Page Setting :</p>
+                                        <br>
+                                        <input type="checkbox" name="sengine" checked="true"><span style="font-size: 17px">&nbsp;&nbsp;Show my profile on search engines.</span>
+                                        <br><br>
+                                        <input type="checkbox" name="detail" checked="true"><span style="font-size: 17px">&nbsp;&nbsp;Show books I am taking on my profile page.</span>
+                                        <br><br>
+                                </div>
+                                <div class="content" align="center" style="height: 90px;border-top: 1px solid #BBBBBB;">
+                                    <button class="btn btn-danger btn-lg" type="submit">Save</button>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-10" id="notification" style="display:none;padding: 0px;border-left:1px solid #BBBBBB;min-height: 500px">
+                                <div class="head" align="center" style="border-bottom: 1px solid #BBBBBB;height: 80px;padding:1.5%;">
+                                   <h3 style="font-weight: 600">Notification</h3>
+                                   <p style="font-size: 17px">Turn promotional email notifications from Library on or off</p>
+                                </div>
+                                <form action="edit_photo">
+                                <div class="content" style="height: auto">
+                                        <p style="font-size: 17px">I want to receive :</p>
+                                        <br>
+                                        <div style="border:1px solid #BBBBBB;padding: 15px">
+                                            <input type="checkbox" name="detail" checked="true"><span style="font-size: 17px">&nbsp;&nbsp;Promotions, book recommendations, and helpful resourses.</span>
+                                        </div>
+                                        <br>
+                                        <div style="border:1px solid #BBBBBB;padding: 15px">
+                                            <input type="checkbox" name="detail"><span style="font-size: 17px">&nbsp;&nbsp;Don't send me any promotional emails.</span>
+                                        </div>
+                                        <br>
+                                </div>
+                                <div class="content" align="center" style="height: 90px;border-top: 1px solid #BBBBBB">
+                                    <button class="btn btn-danger btn-lg" type="submit">Save</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+            </div>
+        </div>
+    </div>
+        <!--//checkout-->
+        <!-- footer -->
+        <%- include('partials/footer') %>
+        <!-- //footer -->
+   
+    <!-- //home -->
+
+    <!-- Common js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!--// Common js -->
+    <!-- cart-js -->
+    <script src="js/minicart.js"></script>
+    <!-- Script for account setting -->
+    <script>
+        $('#opt1').on('click',() => {
+            $('#profile').show()
+            $('#photo').hide()
+            $('#accDetail').hide()
+            $('#cardDetail').hide()
+            $('#privacy').hide()
+            $('#notification').hide()
+        })
+        $('#opt2').on('click',() => {
+            $('#profile').hide()
+            $('#photo').show()
+            $('#accDetail').hide()
+            $('#cardDetail').hide()
+            $('#privacy').hide()
+            $('#notification').hide()
+        })
+        $('#opt3').on('click',() => {
+            $('#profile').hide()
+            $('#photo').hide()
+            $('#accDetail').show()
+            $('#cardDetail').hide()
+            $('#privacy').hide()
+            $('#notification').hide()
+        })
+        $('#opt4').on('click',() => {
+            $('#profile').hide()
+            $('#photo').hide()
+            $('#accDetail').hide()
+            $('#cardDetail').show()
+            $('#privacy').hide()
+            $('#notification').hide()
+        })
+        $('#opt5').on('click',() => {
+            $('#profile').hide()
+            $('#photo').hide()
+            $('#accDetail').hide()
+            $('#cardDetail').hide()
+            $('#privacy').show()
+            $('#notification').hide()
+        })
+        $('#opt6').on('click',() => {
+            $('#profile').hide()
+            $('#photo').hide()
+            $('#accDetail').hide()
+            $('#cardDetail').hide()
+            $('#privacy').hide()
+            $('#notification').show()
+        })
+    </script>
+    Script for image upload field
+    <script>
+        $(document).on('click', '.browse', function(){
+          var file = $(this).parent().parent().parent().find('.file');
+          file.trigger('click');
+        });
+        $(document).on('change', '.file', function(){
+          $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+        });
+    </script>
+    <script>
+        chr.render();
+
+        chr.cart.on('new_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) {}
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <!--quantity-->
+    <script>
+        $('.value-plus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) + 1;
+            divUpd.text(newVal);
+        });
+
+        $('.value-minus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) - 1;
+            if (newVal >= 1) divUpd.text(newVal);
+        });
+    </script>
+    <!--quantity-->
+    <!-- FadeOut-Script -->
+    <script>
+        $(document).ready(function (c) {
+            $('.close1').on('click', function (c) {
+                $('.rem1').fadeOut('slow', function (c) {
+                    $('.rem1').remove();
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close2').on('click', function (c) {
+                $('.rem2').fadeOut('slow', function (c) {
+                    $('.rem2').remove();
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close3').on('click', function (c) {
+                $('.rem3').fadeOut('slow', function (c) {
+                    $('.rem3').remove();
+                });
+            });
+        });
+    </script>
+    <!--// FadeOut-Script -->
+
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+    <!--search jQuery-->
+    <script src="js/main.js"></script>
+    <!--search jQuery-->
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/scrolling-nav.js"></script>
+    <!-- //fixed-scroll-nav-js -->
+    <!--//scripts-->
+    <!-- start-smooth-scrolling -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+ ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

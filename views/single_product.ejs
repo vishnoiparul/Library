@@ -1,0 +1,390 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Library | Single Product</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Chronicle Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Custom Theme files -->
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<!-- shop css -->
+	<link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+	<!-- flexslider-css -->
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<!-- font-awesome icons -->
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<!-- //Custom Theme files -->
+	<!-- online-fonts -->
+	<!-- logo -->
+	<link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+	<!-- titles -->
+	<link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+	<!-- body -->
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	<!-- //online-fonts -->
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<div id="home">
+		<!-- header -->
+		<!-- navbar -->
+		<%- include('partials/nav') %>
+		<!-- //navbar ends here -->
+		<!-- banner -->
+		<div class="banner-bg-inner">
+			<!-- banner-text -->
+			<div class="banner-text-inner">
+				<div class="container">
+					<h2 class="title-inner">
+						world of reading
+					</h2>
+
+				</div>
+			</div>
+			<!-- //banner-text -->
+		</div>
+		<!-- //banner -->
+		<% if(message != null){ %>
+        <div class="alert alert-info alert-dismissible fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Info!</strong> <%= message %>
+        </div>
+        <% } %>
+		<!-- breadcrumbs -->
+		<!--//breadcrumbs ends here-->
+		<!-- Single -->
+		<div class="innerf-pages section">
+			<div class="container">
+				<div class="col-md-4 single-right-left ">
+					<div class="grid images_3_of_2">
+						<div class="flexslider1">
+							<ul class="slides">
+								<li data-thumb="images/s1.jpg">
+									<div class="thumb-image">
+										<img src="uploads/images/<%= book.image %>" data-imagezoom="true" alt=" " class="img-responsive"> </div>
+								</li>
+								<!-- <li data-thumb="images/s2.jpg">
+									<div class="thumb-image">
+										<img src="images/s2.jpg" data-imagezoom="true" alt=" " class="img-responsive"> </div>
+								</li>
+								<li data-thumb="images/s3.png">
+									<div class="thumb-image">
+										<img src="images/s3.png" data-imagezoom="true" alt=" " class="img-responsive"> </div>
+								</li> -->
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-8 single-right-left simpleCart_shelfItem">
+					<h3><%= book.bname %>
+						<span>posted on -<%= book.date %></span>
+					</h3>
+					<p>by
+						<a href="#"><%= book.aname %></a>
+					</p>
+					<div class="caption">
+
+						<ul class="rating-single">
+							<li>
+								<a href="#">
+									<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+								</a>
+							</li>
+						</ul>
+						<div class="clearfix"> </div>
+						<% if(book.option != 'free') { %>
+						<div style="width: 50px" align="left">
+							<ul class="price-list">
+								<li><h6>&#8377;<%= book.oprice %></h6></li>
+								<br>
+								<li><h6>&#8377;<%= book.aprice %></h6></li>
+							</ul>
+						</div>
+						<% } else { %>
+						<h6><%= book.option %></h6>
+						<% } %>
+					</div>
+					<br>
+					<br>
+					<div class="desc_single">
+						<h5>Description</h5>
+						<p><%= book.description %></p>
+					</div>
+					<div class="occasional">
+						<h5>Specifications</h5>
+						<ul class="single_specific">
+							<li>
+								<span>language :</span> <%= book.language %></li>
+							<li>
+								<span>format :</span> E-book</li>
+						</ul>
+					</div>
+				<% if(message == null) { %>
+					<!-- <div class="color-quality">
+						<div class="color-quality-right">
+							<h5>Also Formats avaiable in:</h5>
+							<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+								<option value="null">paper back &nbsp;$90.00</option>
+								<option value="null">Audio Book &nbsp;$200.00</option>
+							</select>
+						</div>
+					</div> -->
+					<div class="clearfix"></div>
+					<!-- <div class="description">
+						<h5>Check delivery, payment options and charges at your location</h5>
+						<form action="#" method="post">
+							<input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}"
+							    required="">
+							<input type="submit" value="Check">
+						</form>
+					</div> -->
+					<br>
+					<form action="addCart" method="post">
+						<button type="submit" class="btn btn-primary btn-lg" style="background-color: #0044cc">
+							<input type="hidden" value="<%= book.bid %>" name="bookdetail">
+				        	<span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
+				        </button> 
+			        </form>
+				</div>
+				<% } else { %>
+				<div align="right" style="width:500px;padding-top: 100px">
+                    <a href="preview?bid=<%= book.bid %>">
+                        <button class="btn btn-primary btn-lg" style="background-color: #ff0000">Read Now</button>
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <a href="like?bid=<%= book.bid %>">
+                        <button class="btn btn-primary btn-lg" style="background-color: #0000ff">
+                        <% if(message == 'Item in cart') { %>
+                        <span class="fa fa-thumbs-up nav-icon"></span> Like
+                        <% } else { %>
+                        Liked
+                        <% } %>
+                        </button>
+                    </a>
+                </div>
+                <% } %>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- /new_arrivals -->
+		<div class="section singlep_btm">
+			<div class="container">
+				<div class="new_arrivals">
+					<h4 class="rad-txt">
+						<span class="abtxt1">featured</span>
+						<span class="abtext"> products</span>
+					</h4>
+					<!-- row3 -->
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product?bid=<%= mostViewed[0].bid %>">
+									<img src="uploads/images/<%= mostViewed[0].image %>" alt=""
+									style = "max-height: 200px">
+								</a>
+							</div>
+							<div class="caption">
+								<h4><%= mostViewed[0].bname %></h4>
+								<p><%= mostViewed[0].aname %></p>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product?bid=<%= mostViewed[1].bid %>">
+									<img src="uploads/images/<%= mostViewed[1].image %>" alt=""
+									style = "max-height: 200px">
+								</a>
+							</div>
+							<div class="caption">
+								<h4><%= mostViewed[1].bname %></h4>
+								<p><%= mostViewed[1].aname %></p>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<a href="single_product?bid=<%= mostViewed[2].bid %>">
+									<img src="uploads/images/<%= mostViewed[2].image %>" alt=""
+									style = "max-height: 200px">
+								</a>
+							<div class="caption">
+								<h4><%= mostViewed[2].bname %></h4>
+								<p><%= mostViewed[2].aname %></p>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product?bid=<%= mostViewed[3].bid %>">
+									<img src="uploads/images/<%= mostViewed[3].image %>" alt=""
+									style = "max-height: 200px">
+								</a>
+							</div>
+							<div class="caption">
+								<h4><%= mostViewed[3].bname %></h4>
+								<p><%= mostViewed[3].aname %></p>
+							</div>
+						</div>
+					</div>
+					<!-- //row3 -->
+					<div class="clearfix"></div>
+				</div>
+				<!--//new_arrivals-->
+				<div class="clearfix"></div>
+
+			</div>
+		</div>
+		<!--// Single -->
+		<!-- footer -->
+		<%- include('partials/footer') %>
+		<!-- //footer -->
+	</div>
+	<!-- //home -->
+	<!-- Common js -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!--// Common js -->
+	<!-- cart-js -->
+	<script src="js/minicart.js"></script>
+	<script>
+		chr.render();
+
+		chr.cart.on('chr_checkout', function (evt) {
+			var items, len, i;
+
+			if (this.subtotal() > 0) {
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) {}
+			}
+		});
+	</script>
+	<!-- //cart-js -->
+	<!-- zoom -->
+	<script src="js/imagezoom.js"></script>
+	<!-- zoom-->
+	<!-- single -->
+	<!-- FlexSlider -->
+	<script src="js/jquery.flexslider.js"></script>
+	<script>
+		// Can also be used with $(document).ready()
+		$(window).load(function () {
+			$('.flexslider1').flexslider({
+				animation: "slide",
+				controlNav: "thumbnails"
+			});
+		});
+	</script>
+	<!-- //FlexSlider-->
+
+	<!-- dropdown nav -->
+	<script>
+		$(document).ready(function () {
+			$(".dropdown").hover(
+				function () {
+					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
+					$(this).toggleClass('open');
+				},
+				function () {
+					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
+					$(this).toggleClass('open');
+				}
+			);
+		});
+	</script>
+	<!-- //dropdown nav -->
+	<!--search jQuery-->
+	<script src="js/main.js"></script>
+	<!--search jQuery-->
+
+	<!-- Scrolling Nav JavaScript -->
+	<script src="js/scrolling-nav.js"></script>
+	<!-- //fixed-scroll-nav-js -->
+	<!--//scripts-->
+	<script src="js/bootstrap.js"></script>
+	<!-- start-smoth-scrolling -->
+	<script src="js/move-top.js"></script>
+	<script src="js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+	<!-- here stars scrolling icon -->
+	<script>
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- smoothscroll -->
+	<script src="js/SmoothScroll.min.js"></script>
+	<!-- //smoothscroll -->
+
+</body>
+
+</html>
